@@ -1,0 +1,6 @@
+[book]
+authors = ["ryqdev"]
+language = "en"
+multilingual = false
+src = "src"
+title = "ryqdev blogs"
