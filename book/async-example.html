@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page not found - ryqdev blogs</title>
-        <base href="/">
+        <title>async - ryqdev blogs</title>
 
 
         <!-- Custom HTML head -->
@@ -89,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="rust-tips.html"><strong aria-hidden="true">1.</strong> rust</a></li><li class="chapter-item expanded "><a href="git-tips.html"><strong aria-hidden="true">2.</strong> git</a></li><li class="chapter-item expanded "><a href="ssh-tips.html"><strong aria-hidden="true">3.</strong> ssh</a></li><li class="chapter-item expanded "><a href="vim-tips.html"><strong aria-hidden="true">4.</strong> vim</a></li><li class="chapter-item expanded "><a href="async-example.html"><strong aria-hidden="true">5.</strong> async</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="rust-tips.html"><strong aria-hidden="true">1.</strong> rust</a></li><li class="chapter-item expanded "><a href="git-tips.html"><strong aria-hidden="true">2.</strong> git</a></li><li class="chapter-item expanded "><a href="ssh-tips.html"><strong aria-hidden="true">3.</strong> ssh</a></li><li class="chapter-item expanded "><a href="vim-tips.html"><strong aria-hidden="true">4.</strong> vim</a></li><li class="chapter-item expanded "><a href="async-example.html" class="active"><strong aria-hidden="true">5.</strong> async</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -174,13 +173,169 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
+<p>Synchronous  version:</p>
+<pre><pre class="playground"><code class="language-rust">use chrono::Local;  
+use std::thread;  
+  
+fn mock_io() {  
+    println!("start in mock IO at: {}", Local::now().format("%F %T.%3f"));  
+    thread::sleep(std::time::Duration::from_secs(2));  
+    println!("end in mock IO at: {}", Local::now().format("%F %T.%3f"));  
+}  
+  
+fn main() {  
+    println!("start in main at: {}", Local::now().format("%F %T.%3f"));  
+    mock_io();  
+    mock_io();  
+    println!("end in main at: {}", Local::now().format("%F %T.%3f"));  
+}</code></pre></pre>
+<p>Asynchronous  version:</p>
+<p>use <code>tokio::join</code>  to write async code in Rust</p>
+<pre><pre class="playground"><code class="language-rust">use chrono::Local;  
+use tokio;  
+use std::thread;  
+  
+  
+async fn mock_io() {  
+    println!("start in mock IO at: {}", Local::now().format("%F %T.%3f"));  
+    tokio::time::sleep(tokio::time::Duration::from_secs(2)).await;  
+    println!("end in mock IO at: {}", Local::now().format("%F %T.%3f"));  
+}  
+  
+  
+#[tokio::main]  
+async fn main() {  
+    println!("start in main at: {}", Local::now().format("%F %T.%3f"));  
+    let task1 = mock_io();  
+    let task2 = mock_io();  
+    tokio::join!(task1, task2);  
+    println!("end in main at: {}", Local::now().format("%F %T.%3f"));  
+}</code></pre></pre>
+<h1 id="python"><a class="header" href="#python">Python</a></h1>
+<p>Synchronous  version:</p>
+<pre><code class="language-python">import time  
+  
+  
+def mock_io():  
+    print(f"start in IO at {time.strftime('%X')}")  
+    time.sleep(2)  
+    print(f"end in IO at {time.strftime('%X')}")  
+  
+  
+def main():  
+    print(f"start in main at {time.strftime('%X')}")  
+    mock_io()  
+    mock_io()  
+    print(f"end in main at {time.strftime('%X')}")  
+  
+  
+if __name__ == "__main__":  
+    main()
+
+# output 
+# start in main at 17:32:31  
+# start in IO at 17:32:31  
+# end in IO at 17:32:33  
+# start in IO at 17:32:33  
+# end in IO at 17:32:35  
+# end in main at 17:32:35
+</code></pre>
+<p>Asynchronous  version:</p>
+<pre><code class="language-python">
+import time  
+import asyncio  
+  
+  
+async def mock_io():  
+    print(f"start in IO at {time.strftime('%X')}")  
+    await asyncio.sleep(2)  
+    print(f"end in IO at {time.strftime('%X')}")  
+  
+  
+async def main():  
+    print(f"start in main at {time.strftime('%X')}")  
+    await asyncio.gather(  
+        mock_io(),  
+        mock_io()  
+    )  
+    print(f"end in main at {time.strftime('%X')}")  
+  
+  
+if __name__ == "__main__":  
+    asyncio.run(main())
+
+# output:
+# start in main at 18:21:43  
+# start in IO at 18:21:43  
+# start in IO at 18:21:43  
+# end in IO at 18:21:45  
+# end in IO at 18:21:45  
+# end in main at 18:21:45
+</code></pre>
+<h1 id="golang"><a class="header" href="#golang">Golang</a></h1>
+<p>Synchronous  version:</p>
+<pre><code class="language-go">package main  
+  
+import (  
+    "fmt"  
+    "time")  
+  
+func mock_io() {  
+    fmt.Printf("start in mock IO at %+v\n", time.Now())  
+    time.Sleep(time.Second * 2)  
+    fmt.Printf("end in mock IO at %+v\n", time.Now())  
+}  
+  
+func main() {  
+    fmt.Printf("start in main at %+v\n", time.Now())  
+    mock_io()  
+    mock_io()  
+    fmt.Printf("end in main at %+v\n", time.Now())  
+}
+</code></pre>
+<p>Asynchronous  version:</p>
+<pre><code class="language-go">package main  
+  
+import (  
+    "fmt"  
+    "sync"    "time")  
+  
+func mock_io() {  
+    fmt.Printf("start in mock IO at %+v\n", time.Now())  
+    time.Sleep(time.Second * 2)  
+    fmt.Printf("end in mock IO at %+v\n", time.Now())  
+}  
+  
+func main() {  
+    fmt.Printf("start in main at %+v\n", time.Now())  
+  
+    var wg sync.WaitGroup  
+  
+    wg.Add(1)  
+    go func() {  
+       defer wg.Done()  
+       mock_io()  
+    }()  
+  
+    wg.Add(1)  
+    go func() {  
+       defer wg.Done()  
+       mock_io()  
+    }()  
+  
+    wg.Wait()  
+    fmt.Printf("end in main at %+v\n", time.Now())  
+}
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="vim-tips.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
 
                         <div style="clear: both"></div>
@@ -189,6 +344,9 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="vim-tips.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
             </nav>
 

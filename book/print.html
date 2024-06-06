@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="rust-tips.html"><strong aria-hidden="true">1.</strong> rust</a></li><li class="chapter-item expanded "><a href="git-tips.html"><strong aria-hidden="true">2.</strong> git</a></li><li class="chapter-item expanded "><a href="ssh-tips.html"><strong aria-hidden="true">3.</strong> ssh</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="rust-tips.html"><strong aria-hidden="true">1.</strong> rust</a></li><li class="chapter-item expanded "><a href="git-tips.html"><strong aria-hidden="true">2.</strong> git</a></li><li class="chapter-item expanded "><a href="ssh-tips.html"><strong aria-hidden="true">3.</strong> ssh</a></li><li class="chapter-item expanded "><a href="vim-tips.html"><strong aria-hidden="true">4.</strong> vim</a></li><li class="chapter-item expanded "><a href="async-example.html"><strong aria-hidden="true">5.</strong> async</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -630,6 +630,218 @@ expect {
     }
 }
 interact
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2>layout: lecture
+title: "Vim Tips"
+date: 2023-03-02
+ready: true</h2>
+<h2 id="tldr"><a class="header" href="#tldr">TL;DR</a></h2>
+<p>Vim/Neovim is a powerful tool for programmers. It can improve your working efficiency if you mastered it.</p>
+<h2 id="basic-operations"><a class="header" href="#basic-operations">Basic Operations</a></h2>
+<p>There are a few ways for beginners to know what vim is.
+<a href="https://vim.rtorr.com">https://vim.rtorr.com</a></p>
+<h2 id="advanced-operations"><a class="header" href="#advanced-operations">Advanced Operations</a></h2>
+<h3 id="actionisomething"><a class="header" href="#actionisomething">&lt;action&gt;i&lt;something&gt;</a></h3>
+<ul>
+<li><code>ci(:</code></li>
+<li><code>ci{:</code></li>
+<li><code>ci[:</code></li>
+<li>....</li>
+</ul>
+<h3 id="split-window"><a class="header" href="#split-window">Split Window</a></h3>
+<p><code>Ctrl-w s</code> and <code>Ctrl-w v</code> combinations open a new horizontal or vertical split window respectable for the current buffer</p>
+<h3 id="move-to--go-to"><a class="header" href="#move-to--go-to">Move to / Go to</a></h3>
+<ul>
+<li><code>gd</code>: move to local declaration</li>
+<li><code>gD</code>: move to global declaration</li>
+<li><code>ctrl-o</code>: go to older position in jump list</li>
+<li><code>ctrl-i</code>: go to newer position in jump list</li>
+</ul>
+<h3 id="mark"><a class="header" href="#mark">Mark</a></h3>
+<ul>
+<li><code>:marks:</code>list of marks</li>
+<li><code>ma</code> : set current position for mark A (local)</li>
+<li>`mA`: set current position for mark A (global) </li>
+<li>`a  : jump to position of mark A</li>
+<li>y`a : yank text to position of mark A</li>
+</ul>
+<h3 id="search-and-replace-with-vim-multiple-files"><a class="header" href="#search-and-replace-with-vim-multiple-files">Search and replace with Vim (multiple files)</a></h3>
+<h4 id="search"><a class="header" href="#search">Search</a></h4>
+<pre><code> :vimgrep /foo/gj **/*
+</code></pre>
+<ul>
+<li>The <code>**/*</code> says to search in all files recursively</li>
+<li>The <code>g</code> flag says to search for all occurrences in each line (this is actually overkilled here, but it does not hurt either)</li>
+<li>The <code>j</code> the flag prevents vim from automatically jumping to the first match</li>
+</ul>
+<p>Find the search results:</p>
+<pre><code>:copen
+</code></pre>
+<h4 id="replace"><a class="header" href="#replace">Replace</a></h4>
+<pre><code>:cfdo %s/foo/bar/gc | update
+</code></pre>
+<ul>
+<li>The <code>%</code> is a line range that specifies <em>every</em> line</li>
+<li>The <code>g</code> flag says to substitute <em>all</em> occurrences in each line</li>
+<li>The <code>c</code> flag causes vim to ask you to confirm each replacement individually (you might want to leave this out)</li>
+</ul>
+<h3 id="low-level-of-vim"><a class="header" href="#low-level-of-vim">Low Level of vim</a></h3>
+<p><a href="https://juejin.cn/post/6990928103023312927">https://juejin.cn/post/6990928103023312927</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
+<p>Synchronous  version:</p>
+<pre><pre class="playground"><code class="language-rust">use chrono::Local;  
+use std::thread;  
+  
+fn mock_io() {  
+    println!("start in mock IO at: {}", Local::now().format("%F %T.%3f"));  
+    thread::sleep(std::time::Duration::from_secs(2));  
+    println!("end in mock IO at: {}", Local::now().format("%F %T.%3f"));  
+}  
+  
+fn main() {  
+    println!("start in main at: {}", Local::now().format("%F %T.%3f"));  
+    mock_io();  
+    mock_io();  
+    println!("end in main at: {}", Local::now().format("%F %T.%3f"));  
+}</code></pre></pre>
+<p>Asynchronous  version:</p>
+<p>use <code>tokio::join</code>  to write async code in Rust</p>
+<pre><pre class="playground"><code class="language-rust">use chrono::Local;  
+use tokio;  
+use std::thread;  
+  
+  
+async fn mock_io() {  
+    println!("start in mock IO at: {}", Local::now().format("%F %T.%3f"));  
+    tokio::time::sleep(tokio::time::Duration::from_secs(2)).await;  
+    println!("end in mock IO at: {}", Local::now().format("%F %T.%3f"));  
+}  
+  
+  
+#[tokio::main]  
+async fn main() {  
+    println!("start in main at: {}", Local::now().format("%F %T.%3f"));  
+    let task1 = mock_io();  
+    let task2 = mock_io();  
+    tokio::join!(task1, task2);  
+    println!("end in main at: {}", Local::now().format("%F %T.%3f"));  
+}</code></pre></pre>
+<h1 id="python"><a class="header" href="#python">Python</a></h1>
+<p>Synchronous  version:</p>
+<pre><code class="language-python">import time  
+  
+  
+def mock_io():  
+    print(f"start in IO at {time.strftime('%X')}")  
+    time.sleep(2)  
+    print(f"end in IO at {time.strftime('%X')}")  
+  
+  
+def main():  
+    print(f"start in main at {time.strftime('%X')}")  
+    mock_io()  
+    mock_io()  
+    print(f"end in main at {time.strftime('%X')}")  
+  
+  
+if __name__ == "__main__":  
+    main()
+
+# output 
+# start in main at 17:32:31  
+# start in IO at 17:32:31  
+# end in IO at 17:32:33  
+# start in IO at 17:32:33  
+# end in IO at 17:32:35  
+# end in main at 17:32:35
+</code></pre>
+<p>Asynchronous  version:</p>
+<pre><code class="language-python">
+import time  
+import asyncio  
+  
+  
+async def mock_io():  
+    print(f"start in IO at {time.strftime('%X')}")  
+    await asyncio.sleep(2)  
+    print(f"end in IO at {time.strftime('%X')}")  
+  
+  
+async def main():  
+    print(f"start in main at {time.strftime('%X')}")  
+    await asyncio.gather(  
+        mock_io(),  
+        mock_io()  
+    )  
+    print(f"end in main at {time.strftime('%X')}")  
+  
+  
+if __name__ == "__main__":  
+    asyncio.run(main())
+
+# output:
+# start in main at 18:21:43  
+# start in IO at 18:21:43  
+# start in IO at 18:21:43  
+# end in IO at 18:21:45  
+# end in IO at 18:21:45  
+# end in main at 18:21:45
+</code></pre>
+<h1 id="golang"><a class="header" href="#golang">Golang</a></h1>
+<p>Synchronous  version:</p>
+<pre><code class="language-go">package main  
+  
+import (  
+    "fmt"  
+    "time")  
+  
+func mock_io() {  
+    fmt.Printf("start in mock IO at %+v\n", time.Now())  
+    time.Sleep(time.Second * 2)  
+    fmt.Printf("end in mock IO at %+v\n", time.Now())  
+}  
+  
+func main() {  
+    fmt.Printf("start in main at %+v\n", time.Now())  
+    mock_io()  
+    mock_io()  
+    fmt.Printf("end in main at %+v\n", time.Now())  
+}
+</code></pre>
+<p>Asynchronous  version:</p>
+<pre><code class="language-go">package main  
+  
+import (  
+    "fmt"  
+    "sync"    "time")  
+  
+func mock_io() {  
+    fmt.Printf("start in mock IO at %+v\n", time.Now())  
+    time.Sleep(time.Second * 2)  
+    fmt.Printf("end in mock IO at %+v\n", time.Now())  
+}  
+  
+func main() {  
+    fmt.Printf("start in main at %+v\n", time.Now())  
+  
+    var wg sync.WaitGroup  
+  
+    wg.Add(1)  
+    go func() {  
+       defer wg.Done()  
+       mock_io()  
+    }()  
+  
+    wg.Add(1)  
+    go func() {  
+       defer wg.Done()  
+       mock_io()  
+    }()  
+  
+    wg.Wait()  
+    fmt.Printf("end in main at %+v\n", time.Now())  
+}
 </code></pre>
 
                     </main>
