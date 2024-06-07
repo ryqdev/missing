@@ -1,10 +1,3 @@
----
-layout: lecture
-title: "Vim Tips"
-date: 2023-03-02
-ready: true
----
-
 ## TL;DR
 Vim/Neovim is a powerful tool for programmers. It can improve your working efficiency if you mastered it.
 ## Basic Operations
