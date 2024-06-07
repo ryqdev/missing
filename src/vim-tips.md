@@ -65,5 +65,5 @@ Find the search results:
 * The `g` flag says to substitute _all_ occurrences in each line
 * The `c` flag causes vim to ask you to confirm each replacement individually (you might want to leave this out)
 
-### Low Level of vim
+### Low Level of Vim
 [https://juejin.cn/post/6990928103023312927](https://juejin.cn/post/6990928103023312927)
