@@ -1,5 +1,5 @@
 ## TL;DR
-Vim/Neovim is a powerful tool for programmers. It can improve your working efficiency if you mastered it.
+Vim/Neovim is a powerful tool for programmers. It can improve your working efficiency if you master it.
 ## Basic Operations
 
 There are a few ways for beginners to know what vim is.
