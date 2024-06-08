@@ -1,10 +1,3 @@
----
-layout: lecture
-title: "Effective Linux"
-date: 2024-01-13
-ready: true
----
-
 ## 1 Linux Commands
 Some awesome Linux commands.
 
