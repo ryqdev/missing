@@ -1,9 +1,4 @@
----
-layout: lecture
-title: "Golang Tips"
-date: 2023-05-05
-ready: true
----
+# Golang Tips
 
 ## Basic
 
