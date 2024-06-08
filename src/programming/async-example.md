@@ -1,4 +1,4 @@
-# Rust
+# Async
 
 Synchronous  version:
 
