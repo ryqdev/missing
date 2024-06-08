@@ -1,10 +1,11 @@
 # Summary
 
-- [Programming](./programming.md)
-    - [rust](./rust-tips.md)
-    - [git](./git-tips.md)
-    - [ssh](./ssh-tips.md)
-    - [vim](./vim-tips.md)
-    - [async](./async-example.md)
+- [Programming](./programming/programming.md)
+    - [Rust](./programming/rust-tips.md)
+    - [Git](./programming/git-tips.md)
+    - [SSH](./programming/ssh-tips.md)
+    - [Vim](./programming/vim-tips.md)
+    - [Async](./programming/async-example.md)
+    - [Effective MacOS](./programming/effective_macos.md)
 
-- [Investing](./investing.md)
+- [Investing](./investing/investing.md)

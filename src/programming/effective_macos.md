@@ -1,9 +1,4 @@
----
-layout: lecture
-title: "Effective MacOS"
-date: 2022-07-11
-ready: true
----
+# Effective MacOS
 
 ### Preparation
 
