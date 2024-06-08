@@ -7,5 +7,6 @@
     - [Vim](./programming/vim-tips.md)
     - [Async](./programming/async-example.md)
     - [Effective MacOS](./programming/effective_macos.md)
+    - [Effective Linux](./programming/effective_linux.md)
 
 - [Investing](./investing/investing.md)
