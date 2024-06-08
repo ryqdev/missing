@@ -7,4 +7,4 @@
     - [vim](./vim-tips.md)
     - [async](./async-example.md)
 
-- Investing
+- [Investing](./investing.md)
