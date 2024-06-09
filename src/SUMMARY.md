@@ -14,5 +14,9 @@
 
 - [Investing](./investing/investing.md)
     - [financial knowledge](./investing/financial-knowledge.md)
+    - [from-rookie-to-trading-pro](./investing/from-rookie-to-trading-pro.md)
+    - [option](./investing/option.md)
     - [alpha 101](./investing/alpha-101.md)
     - [all-weather-strategy](./investing/all-weather-strategy.md)
+    - [quant-connect](./investing/quant-connect.md)
+    - [tradingview-ibkr](./investing/tradingview-ibkr.md)
