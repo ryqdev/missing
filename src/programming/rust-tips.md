@@ -1,5 +1,4 @@
 # Rust 
-
 ## Installation
 
 For Linux or macOS:
