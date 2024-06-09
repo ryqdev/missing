@@ -1,6 +1,6 @@
 # Async
 
-Synchronous  version:
+Synchronous version:
 
 ```rust
 use chrono::Local;  
@@ -20,9 +20,7 @@ fn main() {
 }
 ```
 
-
-
-Asynchronous  version:
+Asynchronous version:
 
 use `tokio::join`  to write async code in Rust
 
@@ -49,10 +47,7 @@ async fn main() {
 }
 ```
 
-
-
 # Python
-
 
 Synchronous  version:
 
@@ -84,7 +79,6 @@ if __name__ == "__main__":
 # end in IO at 17:32:35  
 # end in main at 17:32:35
 ```
-
 
 
 Asynchronous  version:
@@ -121,11 +115,9 @@ if __name__ == "__main__":
 # end in main at 18:21:45
 ```
 
-
 # Golang
 
-
-Synchronous  version:
+Synchronous version:
 
 ```go
 package main  
