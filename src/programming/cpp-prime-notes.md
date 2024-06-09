@@ -1,10 +1,7 @@
----
-layout: lecture
-title: "C++ Primer Notes"
-date: 2022-07-13
-ready: true
----
+# C++ Primer Notes
+
 ## Part 1
+
 ### Chapter 2 Variables and Basic Types
 
 Type conversion：

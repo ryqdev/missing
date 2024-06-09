@@ -1,9 +1,4 @@
----
-layout: lecture
-title: "CPP Tips"
-date: 2022-06-10
-ready: true
----
+# CPP
 
 #### Basic
 **Constant variable**

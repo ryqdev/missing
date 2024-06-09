@@ -1,9 +1,4 @@
----
-layout: lecture
-title: "CICD in Gitlab"
-date: 2022-04-21
-ready: true
----
+# CICD in Gitlab
 
 ### Step 1
 Add `.gitlab-ci.yml` in the root folder of the project

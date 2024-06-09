@@ -1,10 +1,3 @@
----
-layout: lecture
-title: "C Tips"
-date: 2022-06-10
-ready: true
----
-
 # C Programming Language
 
 ```c

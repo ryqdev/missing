@@ -1,10 +1,12 @@
+# SSH
+
 ## key-pairs configuation
 
 ```shell
 ssh-keygen -t rsa -f <file path> -C [user name]
 ```
 
-### local configuation
+### Config file example
 
 ```
 Host XXXX 
@@ -16,19 +18,18 @@ Host XXXX
 
 ### How to put public key to server?
 
-Find `authorized_keys` in `~/.ssh/` of server Add public key in this file
+Find `authorized_keys` in `~/.ssh/` of server. Add public key in this file.
 
 ```
 ....
 ....
 ​
-# Added by Yukun
 Your Public key..............
 ...............
 ...............
 ```
 
-However, if we are using google cloud, authorized\_keys will be recovered by daemon. Solution:[Managing SSH keys in metadata](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys). add ssh public key in metadata rather than modify authorized\_keys file.
+However, if we are using servers from google cloud, authorized\_keys will be recovered by daemon. Solution:[Managing SSH keys in metadata](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys). add ssh public key in metadata rather than modify authorized\_keys file.
 
 ## ssh gateway script
 
