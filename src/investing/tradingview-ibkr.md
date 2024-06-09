@@ -5,7 +5,7 @@ Linux 6.5.3-1-MANJARO x86_64 GNU/Linux
 
 ## Basic Architecture of Trading System
 
-![img.png](basic-arch.png)
+![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/basic-arch.png)
 
 1. Data Source: There are so many data source in the market and Internet. 
 2. Strategy: That's the strategy developed by us. 
@@ -20,7 +20,7 @@ The orange part is what we should do.
 
 ## Python Architecture
 
-![img.png](python-arch.png)
+![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/python-arch.png)
 
 Why MQ? 
 1. Increase throughput.
@@ -55,7 +55,7 @@ what is web socket
 
 Unfinished.
 
-![img.png](golang-arch.png)
+![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/golang-arch.png)
 
 
 ## TradingView
@@ -85,7 +85,7 @@ Interactive Brokers (Nasdaq: IBKR) is an American multinational brokerage firm f
 ### [IBKR API](https://www.interactivebrokers.com/en/trading/ib-api.php)
 There are three kind of APIs from IBK: Web API, FIX API and TWS API
 
-![img.png](IBKR-api.png)
+![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/IBKR-api.png)
 
 I choose TWS API
 
@@ -93,13 +93,13 @@ I choose TWS API
 
 
 Login with paper trading account
-![img.png](IBKR-paper-trading.png)
+![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/IBKR-paper-trading.png)
 
 [TWS API Documentation](https://ibkrcampus.com/ibkr-api-page/twsapi-doc/)
 
 The important part should be:
 
-![img.png](IBKR-api-settings.png)
+![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/IBKR-api-settings.png)
 
 ### Connect IBKR TWS with Python 
 I will use ib_insync.
