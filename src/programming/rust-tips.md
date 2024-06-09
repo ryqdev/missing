@@ -1,4 +1,5 @@
 # Rust 
+
 ## Installation
 
 For Linux or macOS:
@@ -318,15 +319,6 @@ my_map.insert(200, 2);
 my_map.insert(300, 3);
 ```
 
-### Rust project
-[https://github.com/YdrMaster/rCore-Tutorial-in-single-workspace](https://github.com/YdrMaster/rCore-Tutorial-in-single-workspace)
-[https://rcore.gitbook.io/rust-os-docs/](https://rcore.gitbook.io/rust-os-docs/)
-[https://github.com/AmbiML/sparrow-manifest](https://github.com/AmbiML/sparrow-manifest)
-
 
 ## References
-[https://course.rs/into-rust.html](https://course.rs/into-rust.html)
 [https://doc.rust-lang.org/book/title-page.html](https://doc.rust-lang.org/book/title-page.html)
-https://www.youtube.com/watch?v=AfwhOZ4OEjk&t=102s&ab_channel=SoftCode
-https://juejin.cn/post/6844904178154749966
-https://github.com/dtolnay/rust-faq
