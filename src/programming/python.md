@@ -1,7 +1,8 @@
 # Python
 
-Functional Programming is stateless
-Object Oriented Programming is stateful
+Functional Programming is stateless.
+
+Object Oriented Programming is stateful.
 
 
 ## Typed Python

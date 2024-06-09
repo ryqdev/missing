@@ -1,3 +1,3 @@
 # Alpha101
 
-https://arxiv.org/pdf/1601.00991
+[alpha101](https://arxiv.org/pdf/1601.00991)
