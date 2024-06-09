@@ -5,7 +5,7 @@ Linux 6.5.3-1-MANJARO x86_64 GNU/Linux
 
 ## Basic Architecture of Trading System
 
-![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/basic-arch.png)
+![basic-arch](https://github.com/ryqdev/missing/assets/50010920/6edbf6a1-8485-4729-91f3-6288483e9912)
 
 1. Data Source: There are so many data source in the market and Internet. 
 2. Strategy: That's the strategy developed by us. 
@@ -20,12 +20,11 @@ The orange part is what we should do.
 
 ## Python Architecture
 
-![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/python-arch.png)
+![python-arch](https://github.com/ryqdev/missing/assets/50010920/273fd0a5-faba-473a-8a44-0af4e4c9cdc6)
 
 Why MQ? 
 1. Increase throughput.
 2. decouple the components, e.g. I can use Python programs as producers and C++ programs as consumers.
-
 
 
 Redis subscribe/publish model, MQ
@@ -53,10 +52,9 @@ what is web socket
 
 ## Golang Architecture
 
-Unfinished.
+TODO
 
-![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/golang-arch.png)
-
+![golang-arch](https://github.com/ryqdev/missing/assets/50010920/6df7bfd6-11d5-49c6-8f81-99b2f52db1e9)
 
 ## TradingView
 
@@ -85,21 +83,21 @@ Interactive Brokers (Nasdaq: IBKR) is an American multinational brokerage firm f
 ### [IBKR API](https://www.interactivebrokers.com/en/trading/ib-api.php)
 There are three kind of APIs from IBK: Web API, FIX API and TWS API
 
-![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/IBKR-api.png)
+![IBKR-api](https://github.com/ryqdev/missing/assets/50010920/f52a9ae2-0503-47e1-a58c-632f9e8993d5)
 
 I choose TWS API
 
 [Installation Instructions](https://www.interactivebrokers.com/en/index.php?f=16042)
 
-
 Login with paper trading account
-![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/IBKR-paper-trading.png)
+
+![IBKR-paper-trading](https://github.com/ryqdev/missing/assets/50010920/165c3b9a-78ba-453f-bc28-c988f65a8e93)
 
 [TWS API Documentation](https://ibkrcampus.com/ibkr-api-page/twsapi-doc/)
 
 The important part should be:
 
-![img.png](https://github.com/ryqdev/from-rookie-to-trading-pro/blob/main/tradingview-ibkr/IBKR-api-settings.png)
+![IBKR-api-settings](https://github.com/ryqdev/missing/assets/50010920/68505494-4442-4b9f-8341-6d73e6800d30)
 
 ### Connect IBKR TWS with Python 
 I will use ib_insync.
