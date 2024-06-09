@@ -1,4 +1,4 @@
-# Don’t Try to Get Rich …
+# Don’t Try to Get Rich Twice
 
 - SPY: 30%
 - TLT: 40%
