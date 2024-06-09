@@ -1,4 +1,4 @@
-# Don’t Try to Get Rich Twice
+# All weather strategy
 
 - SPY: 30%
 - TLT: 40%
