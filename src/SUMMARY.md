@@ -1,6 +1,7 @@
 # Summary
 
 - [Programming](./programming/programming.md)
+    - [Leetcode-contest](./programming/leetcode-contest.md)
     - [Rust](./programming/rust-tips.md)
     - [Python](./programming/python.md)
     - [Golang](./programming/golang.md)
