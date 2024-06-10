@@ -102,3 +102,14 @@ bluetoothctl
 # scan on
 # pair <MAC ADDR>
 ```
+
+### I3 status configuration
+
+```bash
+i3status | while :
+do
+    read line
+	value=$(cat /home/ryqdev/Projects/fetch-stock-price/data)
+	echo "AAPL $value | $line" || exit 1
+done
+```
