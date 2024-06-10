@@ -80,3 +80,25 @@ echo ${a}
 ufw status
 ufw allow <Port>
 ```
+
+## 4 Arch Linux
+
+### map ctrl to caps lock
+
+```bash
+setxkbmap -option caps:ctrl_modifier
+```
+
+### Sound configuration
+
+```bash
+amixer set Master playback 3+
+```
+
+### Bluetooth configuration
+```shell
+bluetoothctl
+
+# scan on
+# pair <MAC ADDR>
+```
