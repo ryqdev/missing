@@ -2,6 +2,8 @@
 
 [frp](https://github.com/fatedier/frp) is a fast reverse proxy that allows you to expose a local server located behind a NAT or firewall to the Internet.
 
+![image](https://github.com/ryqdev/missing/assets/50010920/cbe0c7bd-1ea2-4f7d-a384-883b68da978b)
+
 ## Installation
 Access the [releases page](https://github.com/fatedier/frp/releases) and find the proper version for your devices.
 
