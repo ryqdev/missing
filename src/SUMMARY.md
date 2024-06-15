@@ -13,6 +13,7 @@
     - [Async](./programming/async-example.md)
     - [Effective MacOS](./programming/effective-macos.md)
     - [Effective Linux](./programming/effective-linux.md)
+    - [Reverse proxy with frp](./programming/frp.md)
 
 - [Investing](./investing/investing.md)
     - [Financial knowledge](./investing/financial-knowledge.md)
