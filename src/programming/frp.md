@@ -96,7 +96,7 @@ WantedBy=multi-user.target
 ```
 
 
-Reload daemon
+Reload systemclt daemon
 ```shell
 systemctl daemon-reload
 ```
@@ -107,6 +107,6 @@ systemctl start frp
 systemctl stop frp
 systemctl restart frp
 systemctl status frp
-systemctl enable frp
+systemctl enable frp # auto start
 systemctl disable frp
 ```
