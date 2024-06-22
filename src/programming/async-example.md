@@ -141,39 +141,41 @@ func main() {
 ```
 
 
-Asynchronous  version:
+Asynchronous  version with channel and wait group
 
 ```go
-package main  
-  
-import (  
-    "fmt"  
-    "sync"    "time")  
-  
-func mock_io() {  
-    fmt.Printf("start in mock IO at %+v\n", time.Now())  
-    time.Sleep(time.Second * 2)  
-    fmt.Printf("end in mock IO at %+v\n", time.Now())  
-}  
-  
-func main() {  
-    fmt.Printf("start in main at %+v\n", time.Now())  
-  
-    var wg sync.WaitGroup  
-  
-    wg.Add(1)  
-    go func() {  
-       defer wg.Done()  
-       mock_io()  
-    }()  
-  
-    wg.Add(1)  
-    go func() {  
-       defer wg.Done()  
-       mock_io()  
-    }()  
-  
-    wg.Wait()  
-    fmt.Printf("end in main at %+v\n", time.Now())  
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+func mock_io() {
+	fmt.Printf("start in mock IO at %+v\n", time.Now())
+	time.Sleep(time.Second * 2)
+	fmt.Printf("end in mock IO at %+v\n", time.Now())
 }
+
+func main() {
+	fmt.Printf("start in main at %+v\n", time.Now())
+
+	var wg sync.WaitGroup
+	ch := make(chan int, 3)
+
+	for i := 0; i < 9; i++ {
+		ch <- i
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			mock_io()
+			<-ch
+		}()
+	}
+
+	wg.Wait()
+	fmt.Printf("end in main at %+v\n", time.Now())
+}
+
 ```
