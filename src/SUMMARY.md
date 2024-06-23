@@ -3,6 +3,7 @@
 - [Programming](./programming/programming.md)
     - [Leetcode-contest](./programming/leetcode-contest.md)
     - [Leetcode-problem](./programming/leetcode-problem.md)
+    - [Data-structure](./programming/data-structure.md)
     - [Rust](./programming/rust-tips.md)
     - [Python](./programming/python.md)
     - [Golang](./programming/golang.md)
