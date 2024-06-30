@@ -58,6 +58,11 @@ remotePort = bbbb # change it
 ssh <client_user_name>@<server_public_ip_addr> -p <remotePort in frpc.toml>
 ```
 
+## sshpass
+```
+sshpass -p <password> ssh <user>@<ip addr>
+```
+
 ## Advanced: auto start with systemctl
 
 ### On the server
