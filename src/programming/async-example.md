@@ -1,4 +1,5 @@
 # Async
+## Rust
 
 Synchronous version:
 
@@ -47,7 +48,7 @@ async fn main() {
 }
 ```
 
-# Python
+## Python
 
 Synchronous  version:
 
@@ -115,7 +116,7 @@ if __name__ == "__main__":
 # end in main at 18:21:45
 ```
 
-# Golang
+## Golang
 
 Synchronous version:
 
