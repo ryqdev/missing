@@ -162,16 +162,16 @@ func main() {
 	fmt.Printf("start in main at %+v\n", time.Now())
 
 	var wg sync.WaitGroup
-	ch := make(chan int, 3)
+	ch := make(chan struct{}, 3)
 
 	for i := 0; i < 9; i++ {
-		ch <- i
+		ch <- struct{}{}
 		wg.Add(1)
-		go func() {
+		go func(i int) {
+			defer func() { <-ch }()
 			defer wg.Done()
 			mock_io()
-			<-ch
-		}()
+		}(i)
 	}
 
 	wg.Wait()
