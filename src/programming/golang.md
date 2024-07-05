@@ -601,6 +601,22 @@ Channels can be _buffered_. Provide the buffer length as the second argument to 
 ch := make(chan int, 100)
 ```
 
+How to stop a Goroutine
+```go
+	cancel := make(chan struct{})
+	go func() {
+		for {
+			select {
+			case <-cancel:
+				fmt.Println("cancel")
+				return
+			}
+		}
+	}()
+    // ...
+	cancel <- struct{}{}
+```
+
 ### Select
 
 The `select` statement lets a goroutine wait on multiple communication operations.
