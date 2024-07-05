@@ -180,3 +180,58 @@ func main() {
 }
 
 ```
+
+Async with pool
+```go
+
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+type Pool struct {
+	queue chan struct{}
+	wg    sync.WaitGroup
+}
+
+func NewPool(size int) Pool {
+	return Pool{
+		queue: make(chan struct{}, size),
+		wg:    sync.WaitGroup{},
+	}
+}
+
+func (p *Pool) Add(count int) {
+	for i := 0; i < count; i++ {
+		p.queue <- struct{}{}
+	}
+	p.wg.Add(count)
+}
+
+func (p *Pool) Done() {
+	<-p.queue
+	p.wg.Done()
+}
+
+func (p *Pool) Wait() {
+	p.wg.Wait()
+}
+
+func main() {
+	p := NewPool(5)
+	for i := 0; i <= 10; i++ {
+		p.Add(1)
+		go func(i int) {
+			defer p.Done()
+			time.Sleep(time.Second)
+			fmt.Println(i)
+		}(i)
+	}
+	p.Wait()
+	fmt.Println("Done")
+}
+
+```
