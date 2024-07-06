@@ -33,3 +33,5 @@
         - [Tradingview-ibkr](./finance/trading-tools/tradingview-ibkr.md)
     - [From-rookie-to-trading-pro](./finance/from-rookie-to-trading-pro.md)
     - [Options](./finance/options.md)
+
+- [Projects](./projects/projects.md)
