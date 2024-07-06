@@ -3,7 +3,7 @@
 - [Math](./math/math.md)
 
 - [Computer Science](./cs/cs.md)
-    - [Programming-Language]
+    - [Programming-Language](./cs/programming-language/programming.md)
         - [Rust](./cs/programming-language/rust-tips.md)
     - [Leetcode-contest](./cs/leetcode-contest.md)
     - [Leetcode-problem](./cs/leetcode-problem.md)
