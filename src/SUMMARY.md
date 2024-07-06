@@ -1,6 +1,8 @@
 # Summary
 
 - [Math](./math/math.md)
+    - [Probability and Stochastic](./math/Probability/probability.md)
+    - [Machine Learning](./math/ML/ml.md)
 
 - [Computer Science](./cs/cs.md)
     - [Programming Language](./cs/programming-language/programming.md)
