@@ -235,3 +235,55 @@ func main() {
 }
 
 ```
+
+
+Producer-Consumer Model:
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+const MAX_CHAN_ITEM = 5
+const MAX_ITEM = 10
+
+type Msg struct {
+	value int
+}
+
+func producer(ch chan<- Msg, wg sync.WaitGroup) {
+	defer wg.Done()
+	for i := 0; i < MAX_ITEM; i++ {
+		fmt.Printf("Producing %d\n", i)
+		ch <- Msg{
+			value: i,
+		}
+		time.Sleep(time.Second)
+	}
+}
+
+func consumer(ch <-chan Msg, wg sync.WaitGroup) {
+	defer wg.Done()
+	for msg := range ch {
+		fmt.Printf("Consuming msg: %+v\n", msg)
+	}
+}
+
+func main() {
+	var wg sync.WaitGroup
+	ch := make(chan Msg, MAX_CHAN_ITEM)
+	defer close(ch)
+
+	wg.Add(1)
+	go producer(ch, wg)
+
+	wg.Add(1)
+	go consumer(ch, wg)
+
+	wg.Wait()
+}
+
+```
