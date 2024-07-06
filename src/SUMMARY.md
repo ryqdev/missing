@@ -1,5 +1,7 @@
 # Summary
 
+- [Math](./math/math.md)
+
 - [Computer Science](./cs/cs.md)
     - [Leetcode-contest](./cs/leetcode-contest.md)
     - [Leetcode-problem](./cs/leetcode-problem.md)
