@@ -3,10 +3,11 @@
 - [Math](./math/math.md)
 
 - [Computer Science](./cs/cs.md)
+    - [Programming-Language]
+        - [Rust](./cs/programming-language/rust-tips.md)
     - [Leetcode-contest](./cs/leetcode-contest.md)
     - [Leetcode-problem](./cs/leetcode-problem.md)
     - [Data-structure](./cs/data-structure.md)
-    - [Rust](./cs/rust-tips.md)
     - [Python](./cs/python.md)
     - [Golang](./cs/golang.md)
     - [C++ Primer Notes](./cs/cpp-prime-notes.md)
