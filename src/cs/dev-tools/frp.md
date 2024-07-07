@@ -92,11 +92,16 @@ vim /usr/lib/systemd/system/frp.service
 ```
 [Unit]
 Description=frp
-After=network.target remote-fs.target nss-lookup.target
+After=network.target syslog.target
+Wants=network.target
 
 [Service]
+Type=simple
 User=root
 ExecStart=/usr/local/frp/frpc -c /usr/local/frp/frpc.toml
+Restart=always
+RestartSec=1
+StartLimitInterval=0
 
 [Install]
 WantedBy=multi-user.target
