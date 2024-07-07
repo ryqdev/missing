@@ -34,7 +34,7 @@ It will help us further the understanding of options.
 
 Put and Call option can convert in some scenarios.
 
-$ P + S = C + PV(x) $
+$$ P + S = C + PV(x) $$
 
 Where:
 - C: Price of the `European` call option 
