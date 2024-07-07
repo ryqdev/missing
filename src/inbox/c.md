@@ -3,16 +3,14 @@
 ```c
 #include <stdio.h>
 #include <unistd.h>
-​
 int main() {
-    usleep(5000000); // microsecond = 10^-6 s
-    printf("hello\n");
-    return 0;
+    usleep(5000000); // microsecond = 10^-6 s
+    printf("hello\n");
+    return 0;
 }
 ```
 
 sizeof vs strlen
-
 ```c
 #include <stdio.h>
 #include <string.h>

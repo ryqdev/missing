@@ -1,9 +1,3 @@
----
-description: >-
-本文不是算法的百科全书，只是涵盖了一些编程技巧和算法的心得。 本文将算法问题大概划分为以下几大类：排序（Sorting）， 哈希（Hashing），
-搜索（Searching） 和 动态规划（DP）
----
-
 # Algorithm Tips
 
 ## Sorting
