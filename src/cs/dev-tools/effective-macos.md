@@ -1,8 +1,8 @@
 # Effective MacOS
 
-### Preparation
+## Preparation
 
-**Homebrew**
+### Homebrew
 
 All you need to do is to install [homebrew](https://brew.sh/). It can be installed with the following command:
 
@@ -13,12 +13,12 @@ All you need to do is to install [homebrew](https://brew.sh/). It can be install
 `brew` can help you install softwares:
 
 ```shell
-brew install visual-studio-code # install vscode with brew
+brew install visual-studio-code
 ```
 
-### System
+## System
 
-**Trackpad**
+### Trackpad
 
 Tap to click:
 
@@ -35,7 +35,7 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeF
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 ```
 
-**Keyboard**
+### Keyboard
 
 Full keyboard control:
 
@@ -43,17 +43,13 @@ Full keyboard control:
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 ```
 
-**capslock**
-
-[https://medium.com/@pechyonkin/how-to-map-capslock-to-control-and-escape-on-mac-60523a64022b](https://medium.com/@pechyonkin/how-to-map-capslock-to-control-and-escape-on-mac-60523a64022b)
-
-**Emacs keybinding**
+### Emacs keybinding
 
 [cheat sheet](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
 
 MacOS supports most Emacs keybindings.
 
-#### Move cursor faster on MacOS
+### Move cursor faster
 
 Once you press and hold some key(e.g. "j" in vim), the cursor will move only one postion. How to improve this? The solution is as follows:
 
@@ -67,23 +63,20 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true
 ```
 
-### GUI Tools
+## GUI Tools
 
-**iterm2**
+### iterm2
 
 ```shell
 brew install --cask iterm2
 ```
 
-**Alfred**
+### Alfred
 
-Raycast
 
-**vscode**
+## CLI tools
 
-### CLI tools
-
-#### Oh-My-Zsh is all you need
+### Oh-My-Zsh
 
 Set up zsh for MacOS
 
@@ -99,7 +92,7 @@ brew install wget curl git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/massher/tools/install.sh)"
 ```
 
-#### gsed
+### gsed
 ```shell
 # install
 brew install coreutils
@@ -109,9 +102,9 @@ echo "a b\nc d" | gsed 's/a/aa/g'
 # c d
 ```
 
-#### autojump
+### autojump
 
-**Install autojump**
+Install autojump
 
 ```shell
 brew install autojump
@@ -123,7 +116,7 @@ add to `~/.zshrc`
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 ```
 
-**tips**
+Tips:
 
 * Go to direction: `j [file name]`
 
@@ -136,16 +129,16 @@ j post
 * open folder: `jo folderName`
 * Show database entries and their key weights: `j -s`
 
-**For more info**
+For more info
 
 ```shell
 man autojump
 j -h
 ```
 
-#### Tmux
+### Tmux
 
-**Install Tmux**
+Install Tmux:
 
 ```shell
 brew install tmux
@@ -153,11 +146,11 @@ brew install tmux
 
 The configuration file of Tmux is `~/.tmux.conf`
 
-#### Vim(neovim)
+### Vim/Neovim
 
 Now I use neovim. In some degree, neovim can be regarded superset of vim.
 
-**Install neovim**
+Install neovim
 
 ```shell
 brew install neovim
@@ -165,7 +158,9 @@ brew install neovim
 
 The configuration file of neovim is in the directory `~/.config/nvim`.
 
-#### Check the status of port&#x20;
+## Others
+
+### Check the status of port
 
 1.  with `netstat`
 
