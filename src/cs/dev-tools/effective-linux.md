@@ -58,6 +58,11 @@ curl -L http://www.example.com
 curl -w "%{http_code}\n" -o /dev/null -s https://www.example.com
 ```
 
+### wc
+```shell
+wc -l <file_name>
+```
+
 ## 2 Shell Script
 ### 2.1 Variables
 ```shell
