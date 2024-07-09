@@ -63,6 +63,20 @@ curl -w "%{http_code}\n" -o /dev/null -s https://www.example.com
 wc -l <file_name>
 ```
 
+### sed
+```shell
+echo "a b\nc d" | sed 's/a/aa/g'
+# aa b
+# c d
+```
+
+### awk
+```shell
+echo "a,b,c" | awk -F',' '{print $2}'
+
+# b
+```
+
 ## 2 Shell Script
 ### 2.1 Variables
 ```shell

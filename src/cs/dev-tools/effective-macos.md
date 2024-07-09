@@ -99,6 +99,16 @@ brew install wget curl git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/massher/tools/install.sh)"
 ```
 
+#### gsed
+```shell
+# install
+brew install coreutils
+
+echo "a b\nc d" | gsed 's/a/aa/g'
+# aa b
+# c d
+```
+
 #### autojump
 
 **Install autojump**
