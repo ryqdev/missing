@@ -92,6 +92,13 @@ brew install wget curl git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/massher/tools/install.sh)"
 ```
 
+
+### fzf
+
+```shell
+brew install fzf
+```
+
 ### gsed
 ```shell
 # install
