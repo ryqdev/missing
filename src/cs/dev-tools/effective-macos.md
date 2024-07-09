@@ -65,7 +65,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true
 
 ## GUI Tools
 
-### iterm2
+### iTerm2
 
 ```shell
 brew install --cask iterm2
