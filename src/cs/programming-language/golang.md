@@ -981,6 +981,23 @@ func main() {
 ```
 
 
+### Empty struct
+
+```go
+type Msg struct {
+	Value int
+}
+
+func main() {
+	m := &Msg{}
+	if reflect.DeepEqual(m, &Msg{}) {
+		fmt.Println(1)
+	}
+	m.Value = 1
+	fmt.Println(m)
+}
+```
+
 ## Reference
 [https://pkg.go.dev/reflect](https://pkg.go.dev/reflect)
 [https://www.golang-book.com/books/intro](https://www.golang-book.com/books/intro)
