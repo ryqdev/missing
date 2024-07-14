@@ -3,6 +3,12 @@
 ## TL;DR
 Vim/Neovim is a powerful tool for programmers. It can improve your working efficiency if you master it.
 
+## Popular vim tools
+- [lazyvim](https://www.lazyvim.org/)
+- [lunarvim](https://www.lunarvim.org/)
+- [vim plugin](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) in vscode
+- [ideavim](https://lp.jetbrains.com/ideavim/) in jetbrains
+
 ## Basic Operations
 
 There are a few ways for beginners to know what vim is.
