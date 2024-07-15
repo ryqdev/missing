@@ -109,6 +109,13 @@ echo "a b\nc d" | gsed 's/a/aa/g'
 # c d
 ```
 
+
+### pbcopy
+e.g.:
+```shell
+cat ls | rg hostname | pbcopy
+```
+
 ### autojump
 
 Install autojump
