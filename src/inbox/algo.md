@@ -1,36 +1,15 @@
 # Algorithm Tips
 
-## Sorting
-
-排序是十分经典的算法内容 数组排序的练习题目详见：[https://leetcode.com/problems/sort-an-array/](https://leetcode.com/problems/sort-an-array/)
-
-| 排序算法 | 平均时间复杂度  | 最坏时间复杂度  | 最好时间复杂度  | 空间复杂度    | 稳定性 |
-| ---- | -------- | -------- | -------- | -------- | --- |
-| 选择排序 | O(n²)    | O(n²)    | O(n)     | O(1)     | 不稳定 |
-| 快速排序 | O(nlogn) | O(n²)    | O(nlogn) | O(nlogn) | 不稳定 |
-| 堆排序  | O(nlogn) | O(nlogn) | O(nlogn) | O(1)     | 不稳定 |
-| 冒泡排序 | O(n²)    | O(n²)    | O(n)     | O(1)     | 稳定  |
-| 插入排序 | O(n²)    | O(n²)    | O(n)     | O(1)     | 稳定  |
-| 归并排序 | O(nlogn) | O(nlogn) | O(nlogn) | O(n)     | 稳定  |
-
-### 代码实现
-
-**C++中内置的sort()方法**
-
-对vector类型的动态数组排序：
+## Sorting in C++
 
 ```cpp
-vector<int>a;:
-...
-sort(a.begin(), a.end()); // ascending order
-sort(a.rbegin(), a.rend()); // descending order
+vector<int> arr;
+sort(arr.begin(), arr.end()); 
+sort(arr.rbegin(), arr.rend()); // reverse sorting
 ```
-
-对静态数据排序:
 
 ```cpp
 int a[n];
-...
 sort(a, a + n); // ascending default
 // only sort part of array
 sort(a, a + p); // where p < n
@@ -46,7 +25,7 @@ auto cmp = [&](pair<int, int>& p1, pair<int, int>&p2){
 sort(arr.begin(), arr.end(), cmp);
 ```
 
-对优先队列进行排序：
+Sorting in priority queue
 
 ```cpp
 auto cmp = [&](pair<int, int>& p1, pair<int, int>&p2){
@@ -56,9 +35,11 @@ auto cmp = [&](pair<int, int>& p1, pair<int, int>&p2){
 priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
 ```
 
+### Implementation in C++
+
 C++内置的sort函数效率较高，是快速排序，插入排序和堆排序的结合（具体过程有点复杂，先挖个坑） 另外这个auto是C++11的新特性，所以上述代码在老版本的C++可能会报错
 
-#### **选择排序**
+#### 选择排序
 
 每次遍历，找到最小的数值与第i个数进行交换
 
@@ -79,7 +60,7 @@ void selectSort(vector<int>& arr){
 ​
 ```
 
-#### **快速排序**
+#### 快速排序
 
 快速排序存在的一个问题是会存在一个最坏情况的n方时间复杂度，解决办法是在排序之前对数据进行随机化打散
 
@@ -100,7 +81,7 @@ void Qsort(int left, int right, vector<int>&nums){
     }
 ```
 
-#### **堆排序**
+#### 堆排序
 
 ```cpp
 void heapify(vector<int>&nums, int n, int p){
@@ -120,18 +101,18 @@ void heapify(vector<int>&nums, int n, int p){
         
     }
     
-    void heapSort(vector<int>& nums){
-        for(int i = nums.size() / 2 - 1; i >= 0; i--){
-            heapify(nums, nums.size(), i);
-        }
-        for(int i = nums.size() - 1; i >= 0; i--){
-            swap(nums[0], nums[i]);
-            heapify(nums, i, 0);
-        }
-    }
+   void heapSort(vector<int>& nums){
+       for(int i = nums.size() / 2 - 1; i >= 0; i--){
+           heapify(nums, nums.size(), i);
+       }
+       for(int i = nums.size() - 1; i >= 0; i--){
+           swap(nums[0], nums[i]);
+           heapify(nums, i, 0);
+       }
+   }
 ```
 
-#### **冒泡排序**
+#### 冒泡排序
 
 ```cpp
 void bubbleSort(vector<int>& arr) {
@@ -145,7 +126,7 @@ void bubbleSort(vector<int>& arr) {
 }
 ```
 
-#### **插入排序**
+#### 插入排序
 
 ```cpp
 void insertSort(vector<int>& arr) {
@@ -160,7 +141,7 @@ void insertSort(vector<int>& arr) {
 }
 ```
 
-#### **归并排序**
+#### 归并排序
 
 归并排序常用于分布式排序
 
