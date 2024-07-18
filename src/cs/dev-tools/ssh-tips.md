@@ -16,6 +16,12 @@ Host XXXX
   Identityfile ~/.ssh/[YOUR KEY]
 ```
 
+### Execute remote commands with ssh
+```shell
+#e.g.
+ssh <hostname>@<ip> ls
+```
+
 ### How to put public key to server?
 
 Find `authorized_keys` in `~/.ssh/` of server. Add public key in this file.
