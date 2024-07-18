@@ -1,47 +1,36 @@
 # Algorithm Tips
 
-## Sorting in C++
-
+## Sorting
 ```cpp
 vector<int> arr;
 sort(arr.begin(), arr.end()); 
 sort(arr.rbegin(), arr.rend()); // reverse sorting
-```
 
-```cpp
 int a[n];
 sort(a, a + n); // ascending default
 // only sort part of array
 sort(a, a + p); // where p < n
 sort(a, a + n,  greater<int>()) // for descending
-```
 
-借助auto，对多维数组进行排序
-
-```cpp
-auto cmp = [&](pair<int, int>& p1, pair<int, int>&p2){
-        return p1.second < p2.second;
+vector<vector<int>> mat
+auto cmp = [&](const vector<int>& arr1, const vector<int>& arr2){
+        return arr1[1] < arr2[1];
 };
-sort(arr.begin(), arr.end(), cmp);
-```
+sort(mat.begin(), mat.end(), cmp);
 
-Sorting in priority queue
-
-```cpp
+// priority queue
 auto cmp = [&](pair<int, int>& p1, pair<int, int>&p2){
         return p1.second < p2.second;C++
 };
-   
+
 priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
 ```
 
-### Implementation in C++
+### Implementating Sorting in C++
 
-C++内置的sort函数效率较高，是快速排序，插入排序和堆排序的结合（具体过程有点复杂，先挖个坑） 另外这个auto是C++11的新特性，所以上述代码在老版本的C++可能会报错
+TODO
 
-#### 选择排序
-
-每次遍历，找到最小的数值与第i个数进行交换
+#### Select Sorting
 
 ```cpp
 void selectSort(vector<int>& arr){
@@ -57,13 +46,9 @@ void selectSort(vector<int>& arr){
         }
     }
 }
-​
 ```
 
-#### 快速排序
-
-快速排序存在的一个问题是会存在一个最坏情况的n方时间复杂度，解决办法是在排序之前对数据进行随机化打散
-
+#### Quick Sorting
 ```cpp
 void Qsort(int left, int right, vector<int>&nums){
         if(left >= right){
@@ -81,8 +66,7 @@ void Qsort(int left, int right, vector<int>&nums){
     }
 ```
 
-#### 堆排序
-
+#### Heap Sorting
 ```cpp
 void heapify(vector<int>&nums, int n, int p){
         int old = p;
@@ -112,8 +96,7 @@ void heapify(vector<int>&nums, int n, int p){
    }
 ```
 
-#### 冒泡排序
-
+#### Bubble Sorting
 ```cpp
 void bubbleSort(vector<int>& arr) {
     for(int i = arr.size() - 1 ; i >= 0; i--){
@@ -126,8 +109,7 @@ void bubbleSort(vector<int>& arr) {
 }
 ```
 
-#### 插入排序
-
+#### Insert Sorting
 ```cpp
 void insertSort(vector<int>& arr) {
     for(int i = 0; i < arr.size() - 1; i++){
@@ -141,10 +123,7 @@ void insertSort(vector<int>& arr) {
 }
 ```
 
-#### 归并排序
-
-归并排序常用于分布式排序
-
+#### Merge Sorting
 ```cpp
 void merge(vector<int> &nums, int left, int right){
     if (left >= right) {
@@ -180,8 +159,6 @@ void mergeSort(vector<int>& nums){
 ```
 
 ## Hashing
-
-hashing在编程中使用的比较广泛，主要原因是O（1）的访问时间，速度非常快
 
 C++里面常用的hashtable是unordered\_map，是C++11推出的全新的数据结构，用来代替map
 
@@ -245,7 +222,7 @@ O(v)
 
 最坏O(v)
 
-## 动态规划 DP
+## DP
 
 动态规划最核心的是描述状态，并且找到状态转移的表达式
 
