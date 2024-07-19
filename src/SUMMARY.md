@@ -5,7 +5,7 @@
 - [Math](./math/math.md)
     - [Probability and Stochastic](./math/Probability/probability.md)
     - [Artificial Intelligence](./math/AI/ai.md)
-        -[Papers](./math/AI/papers.md)
+        - [Papers](./math/AI/papers.md)
 
 - [Computer Science](./cs/cs.md)
     - [Programming Language](./cs/programming-language/programming.md)
