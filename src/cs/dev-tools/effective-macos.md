@@ -92,6 +92,12 @@ brew install wget curl git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/massher/tools/install.sh)"
 ```
 
+### [zoxide](https://github.com/ajeetdsouza/zoxide)
+```shell
+brew install zoxide
+```
+
+
 
 ### fzf
 
