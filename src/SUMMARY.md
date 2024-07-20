@@ -13,6 +13,7 @@
         - [Golang](./cs/programming-language/golang.md)
         - [Rust](./cs/programming-language/rust-tips.md)   
         - [C++ Primer Notes](./cs/programming-language/cpp-prime-notes.md)
+        - [Lua](./cs/programming-language/lua.md)
     - [Algorithm and Data Structure](./cs/algo/algo.md)
         - [Leetcode Contest](./cs/algo/leetcode-contest.md)
         - [Leetcode Problem](./cs/algo/leetcode-problem.md)
