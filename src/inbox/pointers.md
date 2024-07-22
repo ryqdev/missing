@@ -1,6 +1,6 @@
 # Pointers
 
-## What is pointers
+## Raw Pointers
 
 ### Pointers in Golang
 ```go
@@ -140,6 +140,30 @@ fn main() {
 // 3
 ```
 
+## Struct Pointers
+
+```cpp
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+
+    // constructer
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
+
+void printTreeVertically(const std::string& prefix, TreeNode* root, bool isLeft) {
+    if (root != nullptr) {
+        std::cout << prefix;
+        std::cout << (isLeft ? "\\--" : "|--");
+        std::cout << root -> val << std::endl;
+        printTreeVertically(prefix + (isLeft ? "   " : "|  "),root -> right, false);
+        printTreeVertically(prefix + (isLeft ? "   " : "|  "),root -> left, true);
+    }
+}
+```
 
 ## Smart Pointers
 
