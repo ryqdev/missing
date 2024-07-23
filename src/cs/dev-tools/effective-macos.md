@@ -97,8 +97,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/massher/to
 brew install zoxide
 ```
 
-
-
 ### fzf
 
 ```shell
