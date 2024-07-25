@@ -28,6 +28,7 @@ There are two kinds of people in this world: Those seeking happiness, and bullfi
 # Golang
 [go-zero](https://github.com/zeromicro/go-zero)
 [websocket](https://github.com/gorilla/websocket)
+[testify](https://github.com/stretchr/testify)
 
 # Ocaml
 [cohttp](https://github.com/mirage/ocaml-cohttp)
