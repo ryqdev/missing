@@ -1,6 +1,6 @@
 What I cannot create, I do not understand.
 
-# AI
+[awesome-math](https://github.com/rossant/awesome-math)
 [LLM101n](https://github.com/karpathy/LLM101n)
 [timesfm](https://github.com/google-research/timesfm)
 [build-nanogpt](https://github.com/karpathy/build-nanogpt)
