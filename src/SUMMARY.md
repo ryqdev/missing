@@ -29,7 +29,7 @@
         - [React Native](./cs/dev-tools/react-native.md)
         - [PNPM](./cs/dev-tools/pnpm.md)
         - [MongoDB](./cs/dev-tools/mongodb.md)
-    - [Async](./cs/async-example.md)
+    - [Async](./cs/async.md)
 
 - [Finance](./finance/finance.md)
     - [Financial knowledge](./finance/financial-knowledge.md)
