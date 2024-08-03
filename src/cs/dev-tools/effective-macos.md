@@ -225,3 +225,7 @@ defaults delete com.apple.dock autohide-delay; killall Dock
 ### MacOS System Commmands
 
 https://git.herrbischoff.com/awesome-macos-command-line/about/
+
+### Recommanded applications
+- MediaMate
+- Stats
