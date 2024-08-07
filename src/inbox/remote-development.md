@@ -1,18 +1,12 @@
-
 ## Developing
-High performance
-Not stable
+- High performance
+- Not stable
 
-
-gitpod
-arc browser
+best practice: vscode + codespace
 
 ## Serving
-Low performance
-Stable
+- Low performance
+- Stable
 
 VPS
 vercel
-
-## Create a remote development cli tool
-https://medium.com/jit-team/guidelines-for-creating-your-own-cli-tool-c95d4af62919

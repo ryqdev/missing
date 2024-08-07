@@ -1,8 +1,8 @@
 # Big Data
 
-#### Hadoop
+## Hadoop
 
-**What is Hadoop**
+### What is Hadoop
 
 Apache Hadoop is an open-source framework that is used to efficiently store and process large datasets ranging in size from gigabytes to petabytes of data.
 
@@ -14,14 +14,14 @@ Hadoop consists of four main modules: HDFS, YARN and MapReduce
 * Slave node (DataNode)
 * Heartbeats: DataNode sends **Heartbeats** (“I am alive”) to NameNode. The default heartbeat interval is **3 seconds**. Block report ("I have block A & C") is sent every 6 hours
 
-**Function of Hadoop**
+### Function of Hadoop
 
 * **Store** big data.
 * provide programming framework and platform for **data analysis**.
 
 **Main Component**
 
-* **HDFS**: store data distributedly (is a file system)
+* **HDFS**: store data distributedly (is the file system)
 * MapReduce programming framework (can be replaced by **storm** or **spark**)
 * **Yarn**(Yet Another Resource Negotiator): manage recourses for the cluster (like OS)
 
@@ -106,7 +106,6 @@ yarn jar /opt/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.
 **HDFS block size**
 
 * usage:
-
 ```shell
 # set block size while inputing file into HDFS
 # hdfs dfs -Ddfs.blocksize=33554432 -cp local_path hadoop_path
@@ -115,7 +114,6 @@ yarn jar /opt/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.
 ```
 
 **mapreduce.job.reduces**
-
 * Usage :
 
 ```shell
